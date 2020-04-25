@@ -68,6 +68,7 @@ cover/
 db.sqlite3
 db.sqlite3-journal
 dev.py
+media/
 
 # Flask stuff:
 instance/
