@@ -64,10 +64,13 @@ cover/
 *.pot
 
 # Django stuff:
+.gitignore
 *.log
 db.sqlite3
 db.sqlite3-journal
 dev.py
+media/
+django_project/settings/prod.py
 
 # Flask stuff:
 instance/
