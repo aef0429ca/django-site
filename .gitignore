@@ -67,7 +67,7 @@ cover/
 *.log
 db.sqlite3
 db.sqlite3-journal
-dev.py
+django_project/settings/dev.py
 media/
 
 # Flask stuff:
