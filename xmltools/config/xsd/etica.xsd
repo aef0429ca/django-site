@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Carga">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Imoveis">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Imovel">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CodigoImovel" type="xs:unsignedInt" />
+                    <xs:element name="TipoImovel" type="xs:string" />
+                    <xs:element name="SubTipoImovel" type="xs:string" />
+                    <xs:element name="CategoriaImovel" type="xs:string" />
+                    <xs:element name="Cidade" type="xs:string" />
+                    <xs:element name="Bairro" type="xs:string" />
+                    <xs:element name="Numero" type="xs:unsignedByte" />
+                    <xs:element name="CEP" type="xs:string" />
+                    <xs:element name="PrecoVenda" type="xs:unsignedInt" />
+                    <xs:element name="PrecoCondominio" type="xs:unsignedShort" />
+                    <xs:element name="AreaUtil" type="xs:unsignedByte" />
+                    <xs:element name="AreaTotal" type="xs:unsignedByte" />
+                    <xs:element name="UnidadeMetrica" type="xs:string" />
+                    <xs:element name="QtdDormitorios" type="xs:unsignedByte" />
+                    <xs:element name="QtdSuites" type="xs:unsignedByte" />
+                    <xs:element name="QtdBanheiros" type="xs:unsignedByte" />
+                    <xs:element name="QtdVagas" type="xs:unsignedByte" />
+                    <xs:element name="QtdUnidadesAndar" type="xs:unsignedByte" />
+                    <xs:element name="QtdAndar" type="xs:unsignedByte" />
+                    <xs:element name="AnoConstrucao" type="xs:unsignedShort" />
+                    <xs:element name="Observacao" type="xs:string" />
+                    <xs:element name="AceitaPermuta" type="xs:unsignedByte" />
+                    <xs:element name="TipoOferta" type="xs:unsignedByte" />
+                    <xs:element name="ValorMensal" />
+                    <xs:element name="ValorIPTU" type="xs:unsignedShort" />
+                    <xs:element name="Agua" />
+                    <xs:element name="ArCondicionado" type="xs:unsignedByte" />
+                    <xs:element name="AreaServico" />
+                    <xs:element name="ArmarioCozinha" type="xs:unsignedByte" />
+                    <xs:element name="ArmarioEmbutido" />
+                    <xs:element name="Bosque" />
+                    <xs:element name="CampoFutebol" />
+                    <xs:element name="CasaCaseiro" />
+                    <xs:element name="Caseiro" />
+                    <xs:element name="Cerca" />
+                    <xs:element name="ChildrenCare" />
+                    <xs:element name="Churrasqueira" />
+                    <xs:element name="Closet" />
+                    <xs:element name="CoffeeShop" />
+                    <xs:element name="ComServico" />
+                    <xs:element name="Convencoes" />
+                    <xs:element name="Copa" />
+                    <xs:element name="Curral" />
+                    <xs:element name="DepositoSubsolo" />
+                    <xs:element name="Despensa" />
+                    <xs:element name="EntradaCaminhoes" />
+                    <xs:element name="EntradaFacilitada" />
+                    <xs:element name="EntradaLateral" />
+                    <xs:element name="Escritorio" />
+                    <xs:element name="Esgoto" />
+                    <xs:element name="Esquina" />
+                    <xs:element name="EstacionamentoRotativo" />
+                    <xs:element name="Fogao" />
+                    <xs:element name="FrenteMar" />
+                    <xs:element name="Geminada" />
+                    <xs:element name="Guarita" />
+                    <xs:element name="Heliponto" />
+                    <xs:element name="Hidromassagem" />
+                    <xs:element name="HomeTheater" />
+                    <xs:element name="InfraInternet" />
+                    <xs:element name="Interfone" />
+                    <xs:element name="Jardim" />
+                    <xs:element name="Lago" />
+                    <xs:element name="Lareira" />
+                    <xs:element name="Lavabo" />
+                    <xs:element name="LavanderiaColetiva" />
+                    <xs:element name="Luz" />
+                    <xs:element name="Marina" />
+                    <xs:element name="Microondas" />
+                    <xs:element name="Mobiliado" />
+                    <xs:element name="Pasto" />
+                    <xs:element name="Piscina" />
+                    <xs:element name="PisoElevado" />
+                    <xs:element name="PistaCooper" />
+                    <xs:element name="PistaSkate" />
+                    <xs:element name="Playground" />
+                    <xs:element name="PocoArtesiano" />
+                    <xs:element name="QuadraPoliEsportiva" />
+                    <xs:element name="QuadraTenis" />
+                    <xs:element name="Quintal" />
+                    <xs:element name="Recuo" />
+                    <xs:element name="RedeTelefone" />
+                    <xs:element name="Refeitorio" />
+                    <xs:element name="ReservatorioAgua" />
+                    <xs:element name="RuaAsfaltada" />
+                    <xs:element name="SalaAlmoco" />
+                    <xs:element name="SalaGinastica" />
+                    <xs:element name="SalaIntima" />
+                    <xs:element name="SalaJantar" type="xs:unsignedByte" />
+                    <xs:element name="SalaoFestas" type="xs:unsignedByte" />
+                    <xs:element name="SalaoJogos" />
+                    <xs:element name="SalaVideo" />
+                    <xs:element name="Sauna" />
+                    <xs:element name="Sede" />
+                    <xs:element name="SegurancaInterna" />
+                    <xs:element name="SegurancaPatrimonial" />
+                    <xs:element name="SegurancaRua" />
+                    <xs:element name="SistemaIncendio" />
+                    <xs:element name="Solarium" />
+                    <xs:element name="SpaHidromassagem" />
+                    <xs:element name="Telefone" />
+                    <xs:element name="Terraco" />
+                    <xs:element name="TV" />
+                    <xs:element name="TVCabo" />
+                    <xs:element name="Varanda" />
+                    <xs:element name="Vestiario" />
+                    <xs:element name="WCEmpregada" type="xs:unsignedByte" />
+                    <xs:element name="Fotos">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Foto">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="NomeArquivo" type="xs:string" />
+                                <xs:element name="URLArquivo" type="xs:string" />
+                                <xs:element minOccurs="0" name="Principal" type="xs:boolean" />
+                                <xs:element name="Alterada" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="BusinessCentar" />
+                    <xs:element name="EscritorioVirtual" />
+                    <xs:element name="EstacionamentoVisitantes" />
+                    <xs:element name="GaragemBarcos" />
+                    <xs:element name="Lavoura" />
+                    <xs:element name="PatioEstacionamento" />
+                    <xs:element name="Pier" />
+                    <xs:element name="PistaPouso" />
+                    <xs:element name="PonteRolante" />
+                    <xs:element name="CasaAlvenaria" />
+                    <xs:element name="Rio" />
+                    <xs:element name="CasaFundo" />
+                    <xs:element name="CasaMadeira" />
+                    <xs:element name="CasaMista" />
+                    <xs:element name="CasaPrincipal" />
+                    <xs:element name="CozinhaAzulejada" />
+                    <xs:element name="VidrosReflexivos" />
+                    <xs:element name="QuartoWCEmpregada" />
+                    <xs:element name="EntradaServicoIndependente" />
+                    <xs:element name="LavaRoupas" />
+                    <xs:element name="Clube" />
+                    <xs:element name="EnergiaEletrica" />
+                    <xs:element name="RoupaBanho" />
+                    <xs:element name="ImovelExposicao" />
+                    <xs:element name="Isolada" />
+                    <xs:element name="RoupaCama" />
+                    <xs:element name="MeioAndar" />
+                    <xs:element name="Paiol" />
+                    <xs:element name="PorteiraFechada" />
+                    <xs:element name="ProntoMorar" />
+                    <xs:element name="RoupaMesa" />
+                    <xs:element name="Semigeminada" />
+                    <xs:element name="UtensiliosCozinha" />
+                    <xs:element name="UtilizeFGTS" />
+                    <xs:element name="VentiladoresTeto" />
+                    <xs:element name="VisiteImovelDecorado" />
+                    <xs:element name="Academia" />
+                    <xs:element name="Acessibilidade" />
+                    <xs:element name="Acesso24Horas" />
+                    <xs:element name="AmbientesIntegrados" />
+                    <xs:element name="AndarInteiro" />
+                    <xs:element name="Aquario" />
+                    <xs:element name="Arandelas" />
+                    <xs:element name="Balaustre" />
+                    <xs:element name="Banheira" />
+                    <xs:element name="Biblioteca" />
+                    <xs:element name="Blindex" />
+                    <xs:element name="BusinessCenter" />
+                    <xs:element name="ChurrasqueiraVaranda" />
+                    <xs:element name="CimentoQueimado" />
+                    <xs:element name="CozinhaAmericana" />
+                    <xs:element name="CozinhaGrande" type="xs:unsignedByte" />
+                    <xs:element name="CozinhaPequena" />
+                    <xs:element name="Drywall" />
+                    <xs:element name="Edicula" />
+                    <xs:element name="Escada" />
+                    <xs:element name="EspacoGourmet" />
+                    <xs:element name="EstradaAsfaltada" />
+                    <xs:element name="EstudaPermuta" />
+                    <xs:element name="Freezer" />
+                    <xs:element name="GasEncanado" type="xs:unsignedByte" />
+                    <xs:element name="Geladeira" />
+                    <xs:element name="Horta" />
+                    <xs:element name="JanelaAluminio" />
+                    <xs:element name="LivingTabuasLargas" />
+                    <xs:element name="MuroVidro" />
+                    <xs:element name="Orquidario" />
+                    <xs:element name="PisoMadeira" type="xs:unsignedByte" />
+                    <xs:element name="Platibanda" />
+                    <xs:element name="QuadraSquash" />
+                    <xs:element name="SalaGrande" type="xs:unsignedByte" />
+                    <xs:element name="StandVendasLocal" />
+                    <xs:element name="VistaPanoramica" />
+                    <xs:element name="GessoSanca" />
+                    <xs:element name="IsolamentoAcustico" />
+                    <xs:element name="JanelasGrandes" />
+                    <xs:element name="Mezanino" />
+                    <xs:element name="MurosGrades" />
+                    <xs:element name="PapelParede" />
+                    <xs:element name="PisoLaminado" />
+                    <xs:element name="Poco" />
+                    <xs:element name="Rampas" />
+                    <xs:element name="SalaPequena" />
+                    <xs:element name="VarandaGourmet" />
+                    <xs:element name="HallEntrada" />
+                    <xs:element name="IsolamentoTermico" />
+                    <xs:element name="Laje" />
+                    <xs:element name="MoveisPlanejados" />
+                    <xs:element name="Ofuro" />
+                    <xs:element name="ParaIncorporacao" />
+                    <xs:element name="PisoVinilico" />
+                    <xs:element name="Porcelanato" />
+                    <xs:element name="Restaurante" />
+                    <xs:element name="Silos" />
+                    <xs:element name="VentilacaoNatural" />
+                    <xs:element name="Endereco" />
+                    <xs:element name="Oferta" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

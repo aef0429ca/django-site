@@ -16,3 +16,10 @@ six==1.14.0
 sqlparse==0.3.0
 wincertstore==0.2
 wrapt==1.11.2
+requests>=2.5.1
+numpy>=1.18.3
+pandas>=0.24.0
+lxml>=4.4.2
+codetiming>=1.1.0
+pandas-profiling>=2.4.0
+celery-progress>=0.0.9

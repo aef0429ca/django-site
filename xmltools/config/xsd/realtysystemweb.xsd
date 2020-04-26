@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xsd:element name="Carga">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Imoveis">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Imovel">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="EmailCliente" type="xsd:string" />
+                    <xsd:element name="CodigoImovel" type="xsd:unsignedShort" />
+                    <xsd:element name="TipoImovel" type="xsd:string" />
+                    <xsd:element name="SubTipoImovel" type="xsd:string" />
+                    <xsd:element name="CategoriaImovel" type="xsd:string" />
+                    <xsd:element name="Estado" type="xsd:string" />
+                    <xsd:element name="Cidade" type="xsd:string" />
+                    <xsd:element name="Bairro" type="xsd:string" />
+                    <xsd:element name="Endereco" type="xsd:string" />
+                    <xsd:element name="Numero" />
+                    <xsd:element name="Complemento" />
+                    <xsd:element name="CEP" />
+                    <xsd:element name="PrecoVenda" />
+                    <xsd:element name="PrecoLocacao" type="xsd:unsignedShort" />
+                    <xsd:element name="PrecoLocacaoTemporada" />
+                    <xsd:element name="PrecoCondominio" type="xsd:unsignedByte" />
+                    <xsd:element name="ValorIPTU" type="xsd:unsignedByte" />
+                    <xsd:element name="AreaUtil" type="xsd:unsignedByte" />
+                    <xsd:element name="AreaTotal" type="xsd:unsignedByte" />
+                    <xsd:element name="UnidadeMetrica" />
+                    <xsd:element name="QtdDormitorios" type="xsd:unsignedByte" />
+                    <xsd:element name="QtdSuites" type="xsd:unsignedByte" />
+                    <xsd:element name="QtdBanheiros" type="xsd:unsignedByte" />
+                    <xsd:element name="QtdSalas" type="xsd:unsignedByte" />
+                    <xsd:element name="QtdVagas" type="xsd:unsignedByte" />
+                    <xsd:element name="QtdElevador" />
+                    <xsd:element name="QtdUnidadesAndar" />
+                    <xsd:element name="QtdAndar" />
+                    <xsd:element name="QtdPessoasParaTemporada" />
+                    <xsd:element name="AnoConstrucao" type="xsd:unsignedShort" />
+                    <xsd:element name="PossuiDivida" type="xsd:unsignedByte" />
+                    <xsd:element name="SaldoDivida" />
+                    <xsd:element name="ValorMensalidadeDivida" />
+                    <xsd:element name="QtdParcelasRestantesDivida" />
+                    <xsd:element name="MemorialDescritivo" />
+                    <xsd:element name="Observacao" type="xsd:string" />
+                    <xsd:element name="DataUltimaParcelaDivida" />
+                    <xsd:element name="DiaVencimentoDivida" />
+                    <xsd:element name="AceitaPermuta" type="xsd:unsignedByte" />
+                    <xsd:element name="AceitaPermutaCarro" />
+                    <xsd:element name="AceitaPermutaImovel" />
+                    <xsd:element name="AceitaPermutaOutro" />
+                    <xsd:element name="ValorPermutaCarro" />
+                    <xsd:element name="ValorPermutaImovel" />
+                    <xsd:element name="ValorPermutaOutro" />
+                    <xsd:element name="DescricaoPermuta" />
+                    <xsd:element name="Acesso24Horas" />
+                    <xsd:element name="Agua" type="xsd:unsignedByte" />
+                    <xsd:element name="ArCondicionado" type="xsd:unsignedByte" />
+                    <xsd:element name="ArmarioCozinha" />
+                    <xsd:element name="ArmarioEmbutido" />
+                    <xsd:element name="BusinessCentar" type="xsd:unsignedByte" />
+                    <xsd:element name="Cerca" />
+                    <xsd:element name="Churrasqueira" type="xsd:unsignedByte" />
+                    <xsd:element name="CoffeeShop" />
+                    <xsd:element name="Convencoes" type="xsd:unsignedByte" />
+                    <xsd:element name="Copa" type="xsd:unsignedByte" />
+                    <xsd:element name="EntradaCaminhoes" />
+                    <xsd:element name="Escritorio" type="xsd:unsignedByte" />
+                    <xsd:element name="EscritorioVirtual" />
+                    <xsd:element name="Esgoto" type="xsd:unsignedByte" />
+                    <xsd:element name="Esquina" type="xsd:unsignedByte" />
+                    <xsd:element name="EstacionamentoRotativo" />
+                    <xsd:element name="EstacionamentoVisitantes" type="xsd:unsignedByte" />
+                    <xsd:element name="EstradaAsfaltada" type="xsd:unsignedByte" />
+                    <xsd:element name="GaragemBarcos" />
+                    <xsd:element name="Guarita" type="xsd:unsignedByte" />
+                    <xsd:element name="Heliponto" />
+                    <xsd:element name="InfraInternet" type="xsd:unsignedByte" />
+                    <xsd:element name="Jardim" type="xsd:unsignedByte" />
+                    <xsd:element name="Lago" />
+                    <xsd:element name="Lavoura" />
+                    <xsd:element name="Luz" type="xsd:unsignedByte" />
+                    <xsd:element name="Marina" />
+                    <xsd:element name="Mezanino" type="xsd:unsignedByte" />
+                    <xsd:element name="Pasto" />
+                    <xsd:element name="PatioEstacionamento" />
+                    <xsd:element name="Pier" />
+                    <xsd:element name="Piscina" type="xsd:unsignedByte" />
+                    <xsd:element name="PisoElevado" />
+                    <xsd:element name="PistaPouso" />
+                    <xsd:element name="Playground" type="xsd:unsignedByte" />
+                    <xsd:element name="PonteRolante" />
+                    <xsd:element name="QuadraSquash" type="xsd:unsignedByte" />
+                    <xsd:element name="QuadraTenis" type="xsd:unsignedByte" />
+                    <xsd:element name="QuadraPoliEsportiva" type="xsd:unsignedByte" />
+                    <xsd:element name="Quintal" type="xsd:unsignedByte" />
+                    <xsd:element name="RedeTelefone" />
+                    <xsd:element name="ReservatorioAgua" />
+                    <xsd:element name="Restaurante" type="xsd:unsignedByte" />
+                    <xsd:element name="Rio" />
+                    <xsd:element name="RuaAsfaltada" type="xsd:unsignedByte" />
+                    <xsd:element name="SalaGinastica" type="xsd:unsignedByte" />
+                    <xsd:element name="SalaoFestas" type="xsd:unsignedByte" />
+                    <xsd:element name="SalaoJogos" type="xsd:unsignedByte" />
+                    <xsd:element name="Sauna" type="xsd:unsignedByte" />
+                    <xsd:element name="Sede" />
+                    <xsd:element name="SegurancaRua" />
+                    <xsd:element name="SegurancaPatrimonial" />
+                    <xsd:element name="Silos" />
+                    <xsd:element name="SistemaIncendio" />
+                    <xsd:element name="Telefone" type="xsd:unsignedByte" />
+                    <xsd:element name="TVCabo" type="xsd:unsignedByte" />
+                    <xsd:element name="Varanda" type="xsd:unsignedByte" />
+                    <xsd:element name="Vestiario" />
+                    <xsd:element name="VidrosReflexivos" />
+                    <xsd:element name="WCEmpregada" />
+                    <xsd:element name="QuartoWCEmpregada" type="xsd:unsignedByte" />
+                    <xsd:element name="Lavabo" type="xsd:unsignedByte" />
+                    <xsd:element name="EstudaPermuta" />
+                    <xsd:element name="DepositoSubsolo" />
+                    <xsd:element name="Closet" type="xsd:unsignedByte" />
+                    <xsd:element name="Hidromassagem" type="xsd:unsignedByte" />
+                    <xsd:element name="Lareira" />
+                    <xsd:element name="FrenteMar" />
+                    <xsd:element name="AndarInteiro" />
+                    <xsd:element name="AreaServico" type="xsd:unsignedByte" />
+                    <xsd:element name="Bosque" />
+                    <xsd:element name="CampoFutebol" />
+                    <xsd:element name="CasaCaseiro" type="xsd:unsignedByte" />
+                    <xsd:element name="CasaFundo" type="xsd:unsignedByte" />
+                    <xsd:element name="CasaPrincipal" />
+                    <xsd:element name="Caseiro" />
+                    <xsd:element name="ComServico" />
+                    <xsd:element name="CozinhaAzulejada" />
+                    <xsd:element name="Despensa" type="xsd:unsignedByte" />
+                    <xsd:element name="EnergiaEletrica" type="xsd:unsignedByte" />
+                    <xsd:element name="EntradaServicoIndependente" type="xsd:unsignedByte" />
+                    <xsd:element name="EntradaFacilitada" />
+                    <xsd:element name="EntradaLateral" type="xsd:unsignedByte" />
+                    <xsd:element name="Fogao" />
+                    <xsd:element name="Freezer" />
+                    <xsd:element name="Geladeira" />
+                    <xsd:element name="Geminada" />
+                    <xsd:element name="HomeTheater" type="xsd:unsignedByte" />
+                    <xsd:element name="ImovelExposicao" />
+                    <xsd:element name="Interfone" type="xsd:unsignedByte" />
+                    <xsd:element name="LavaRoupas" />
+                    <xsd:element name="LavanderiaColetiva" type="xsd:unsignedByte" />
+                    <xsd:element name="Isolada" type="xsd:unsignedByte" />
+                    <xsd:element name="LivingTabuasLargas" />
+                    <xsd:element name="MeioAndar" />
+                    <xsd:element name="Microondas" />
+                    <xsd:element name="Oferta" type="xsd:unsignedByte" />
+                    <xsd:element name="Paiol" />
+                    <xsd:element name="ParaIncorporacao" />
+                    <xsd:element name="PistaCooper" />
+                    <xsd:element name="PistaSkate" />
+                    <xsd:element name="Poco" type="xsd:unsignedByte" />
+                    <xsd:element name="PocoArtesiano" />
+                    <xsd:element name="PorteiraFechada" />
+                    <xsd:element name="ProntoMorar" />
+                    <xsd:element name="Refeitorio" />
+                    <xsd:element name="RoupaBanho" />
+                    <xsd:element name="RoupaCama" />
+                    <xsd:element name="RoupaMesa" />
+                    <xsd:element name="SalaAlmoco" />
+                    <xsd:element name="SalaJantar" type="xsd:unsignedByte" />
+                    <xsd:element name="SalaIntima" />
+                    <xsd:element name="SalaVideo" />
+                    <xsd:element name="SegurancaInterna" type="xsd:unsignedByte" />
+                    <xsd:element name="Semigeminada" />
+                    <xsd:element name="SpaHidromassagem" />
+                    <xsd:element name="StandVendasLocal" />
+                    <xsd:element name="TV" />
+                    <xsd:element name="UtensiliosCozinha" />
+                    <xsd:element name="UtilizeFGTS" />
+                    <xsd:element name="VentiladoresTeto" />
+                    <xsd:element name="VisiteImovelDecorado" />
+                    <xsd:element name="Clube" />
+                    <xsd:element name="ChildrenCare" />
+                    <xsd:element name="Curral" />
+                    <xsd:element name="Mobiliado" type="xsd:unsignedByte" />
+                    <xsd:element name="Recuo" type="xsd:unsignedByte" />
+                    <xsd:element name="Solarium" />
+                    <xsd:element name="CasaMista" />
+                    <xsd:element name="CasaAlvenaria" />
+                    <xsd:element name="CasaMadeira" />
+                    <xsd:element name="Terraco" />
+                    <xsd:element name="TipoOferta" type="xsd:unsignedByte" />
+                    <xsd:element name="ValorEntrada" />
+                    <xsd:element name="ValorMensal" />
+                    <xsd:element name="InformacoesComplementares" />
+                    <xsd:element name="DescricaoLocalizacao" />
+                    <xsd:element name="Fotos">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element maxOccurs="unbounded" name="Foto">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="NomeArquivo" type="xsd:decimal" />
+                                <xsd:element name="URLArquivo" type="xsd:string" />
+                                <xsd:element name="Principal" type="xsd:unsignedByte" />
+                                <xsd:element name="Alterada" type="xsd:unsignedByte" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xs:schema>

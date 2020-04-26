@@ -1,0 +1,49 @@
+.content {
+  align-content: center;
+  text-align: center;
+}
+
+.page-header {
+text-align: center;
+align-content: center;
+}
+
+#id_url {
+width: 450px;
+height: 70px;
+}
+
+.embed-profile {
+  width: 1200px;
+  height: 1000px;
+  text-align: center;
+  align-content: center;
+  }
+
+  .btn-sq-lg {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  
+  .btn-sq {
+    width: 100px !important;
+    height: 100px !important;
+    font-size: 10px;
+  }
+  
+  .btn-sq-sm {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 10px;
+  }
+  
+  .btn-sq-xs {
+    width: 25px !important;
+    height: 25px !important;
+    padding:2px;
+  }
+  
+.jumbotron {
+    max-height: 150px;
+    margin-top: -50px; 
+}

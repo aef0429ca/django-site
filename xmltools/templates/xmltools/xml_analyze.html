@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="page-header" style="padding-bottom: 50px;">
+        <h1>Format is:</h1>
+    </div>
+    <!--<h4>{{ request.session.output }}</h4>
+    <h4>{{ request.session.pk }}</h4>
+    <h4>{{ request.session.Format }}</h4> -->
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ urlform.as_p }}
+         
+         {% if request.session.Format == "Unknown" %}
+             <h2 class='warning'>{{ request.session.Format }}</h2>
+             <i class="fas fa-question-circle fa-7x"  style="color:#ffc107;"></i>
+         {% elif request.session.Format == "ZAP" %}
+            <img src="{% static 'images/zap-logo.png' %}" style="height:100px;" />
+            <div style="padding-top: 50px;">
+                <button type="submit" class="btn btn-info btn-lg">Create XML profile</button>   
+            </div>
+         {% elif request.session.Format == "GAIA" %}
+             <img src= "{% static 'images/gaia-logo.png' %}" style="height:100px;" />
+             <div style="padding-top: 50px;">
+            <button type="submit" class="btn btn-info btn-lg">Create XML profile</button>   
+        </div>
+        {% elif request.session.Format == "LOPES" %}
+            <img src="{% static 'images/lopes-logo.png' %}" style="height:80px;" />
+            <div style="padding-top: 50px;">
+                <button type="submit" class="btn btn-info btn-lg">Create XML profile</button>   
+            </div>
+         {% else %}
+             <p>
+         {% endif %}
+         
+    </form>
+
+
+     <p><a href="{% url 'home' %}">Return to home</a></p>
+{% endblock %}

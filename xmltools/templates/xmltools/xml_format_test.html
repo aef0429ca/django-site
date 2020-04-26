@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='container'>
+  <div class="page-header" style="padding-bottom: 50px;">
+    <h3>Identify XML format</h3>
+  </div>
+  
+  {% if messages %}
+  <div class="alert alert-success" style="padding-bottom: 50px;">
+    {% for message in messages %}
+      <p class="{{ message.tags }}">{{ message }}</p>
+    {% endfor %}
+  </div>
+   {% endif %}
+
+  <div class="row">
+    <div class="col-md-12" style="padding-bottom: 50px;">
+      <form method="POST" enctype="multipart/form-data" name="formatform">
+        {% csrf_token %}
+        {{ formatform.format_guess }}
+        <div style="padding-bottom: 50px;"></div>
+          <button type="submit" class="btn btn-info btn-lg">Verify format</button> 
+      </form>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <p><a href="{% url 'home' %}">Return to home</a></p>
+    </div>      
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xsd:element name="Carga">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Imoveis">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="Imovel" minOccurs="1">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:choice maxOccurs="unbounded">
+                      <xsd:element name="CodigoCliente" minOccurs="0" />
+                      <xsd:element name="CodigoImovel" minOccurs="1" />
+                      <xsd:element name="TipoImovel" minOccurs="1" />
+                      <xsd:element name="SubTipoImovel" minOccurs="1" />
+                      <xsd:element name="CategoriaImovel" minOccurs="1" />
+                      <xsd:element name="Cidade" minOccurs="1" />
+                      <xsd:element name="Bairro" minOccurs="1" />
+                      <xsd:element name="Endereco" minOccurs="0" />
+                      <xsd:element name="Numero" minOccurs="0" />
+                      <xsd:element name="Complemento" minOccurs="0" />
+                      <xsd:element name="CEP" minOccurs="0" />
+                      <xsd:element name="PrecoVenda" minOccurs="0" />
+                      <xsd:element name="PrecoLocacao" minOccurs="0" />
+                      <xsd:element name="PrecoLocacaoTemporada" minOccurs="0" />
+                      <xsd:element name="PrecoCondominio" minOccurs="0" />
+                      <xsd:element name="AreaUtil" minOccurs="1" />
+                      <xsd:element name="AreaTotal" minOccurs="0" />
+                      <xsd:element name="UnidadeMetrica" minOccurs="0" />
+                      <xsd:element name="QtdDormitorios" minOccurs="1" />
+                      <xsd:element name="QtdSuites" minOccurs="0" />
+                      <xsd:element name="QtdBanheiros" minOccurs="0" />
+                      <xsd:element name="QtdSalas" minOccurs="0" />
+                      <xsd:element name="QtdVagas" minOccurs="0" />
+                      <xsd:element name="QtdElevador" minOccurs="0" />
+                      <xsd:element name="QtdUnidadesAndar" minOccurs="0" />
+                      <xsd:element name="QtdAndar" minOccurs="0" />
+                      <xsd:element name="QtdPessoasTemporada" minOccurs="0" />
+                      <xsd:element name="AnoConstrucao" minOccurs="0" />
+                      <xsd:element name="PossuiDivida" minOccurs="0" />
+                      <xsd:element name="SaldoDivida" minOccurs="0" />
+                      <xsd:element name="ValorMensalidadeDivida" minOccurs="0" />
+                      <xsd:element name="QtdParcelasRestantesDivida" minOccurs="0" />
+                      <xsd:element name="MemorialDescritivo" minOccurs="0" />
+                      <xsd:element name="Observacao" minOccurs="0" />
+                      <xsd:element name="DataUltimaParcelaDivida" minOccurs="0" />
+                      <xsd:element name="DiaVencimentoDivida" minOccurs="0" />
+                      <xsd:element name="AceitaPermuta" minOccurs="0" />
+                      <xsd:element name="AceitaPermutaCarro" minOccurs="0" />
+                      <xsd:element name="AceitaPermutaImovel" minOccurs="0" />
+                      <xsd:element name="AceitaPermutaOutro" minOccurs="0" />
+                      <xsd:element name="ValorPermutaCarro" minOccurs="0" />
+                      <xsd:element name="ValorPermutaImovel" minOccurs="0" />
+                      <xsd:element name="ValorPermutaOutro" minOccurs="0" />
+                      <xsd:element name="DescricaoPermuta" minOccurs="0" />
+                      <xsd:element name="Acesso24Horas" minOccurs="0" />
+                      <xsd:element name="Agua" minOccurs="0" />
+                      <xsd:element name="ArCondicionado" minOccurs="0" />
+                      <xsd:element name="ArmarioCozinha" minOccurs="0" />
+                      <xsd:element name="ArmarioEmbutido" minOccurs="0" />
+                      <xsd:element name="BusinessCentar" minOccurs="0" />
+                      <xsd:element name="Cerca" minOccurs="0" />
+                      <xsd:element name="Churrasqueira" minOccurs="0" />
+                      <xsd:element name="CoffeeShop" minOccurs="0" />
+                      <xsd:element name="Convencoes" minOccurs="0" />
+                      <xsd:element name="Copa" minOccurs="0" />
+                      <xsd:element name="EntradaCaminhoes" minOccurs="0" />
+                      <xsd:element name="Escritorio" minOccurs="0" />
+                      <xsd:element name="EscritorioVirtual" minOccurs="0" />
+                      <xsd:element name="Esgoto" minOccurs="0" />
+                      <xsd:element name="Esquina" minOccurs="0" />
+                      <xsd:element name="EstacionamentoRotativo" minOccurs="0" />
+                      <xsd:element name="EstacionamentoVisitantes" minOccurs="0" />
+                      <xsd:element name="EstradaAsfaltada" minOccurs="0" />
+                      <xsd:element name="GaragemBarcos" minOccurs="0" />
+                      <xsd:element name="Guarita" minOccurs="0" />
+                      <xsd:element name="Heliponto" minOccurs="0" />
+                      <xsd:element name="InfraInternet" minOccurs="0" />
+                      <xsd:element name="Jardim" minOccurs="0" />
+                      <xsd:element name="Lago" minOccurs="0" />
+                      <xsd:element name="Lavoura" minOccurs="0" />
+                      <xsd:element name="Luz" minOccurs="0" />
+                      <xsd:element name="Marina" minOccurs="0" />
+                      <xsd:element name="Mezanino" minOccurs="0" />
+                      <xsd:element name="Pasto" minOccurs="0" />
+                      <xsd:element name="PatioEstacionamento" minOccurs="0" />
+                      <xsd:element name="Pier" minOccurs="0" />
+                      <xsd:element name="Piscina" minOccurs="0" />
+                      <xsd:element name="PisoElevado" minOccurs="0" />
+                      <xsd:element name="PistaPouso" minOccurs="0" />
+                      <xsd:element name="Playground" minOccurs="0" />
+                      <xsd:element name="PonteRolante" minOccurs="0" />
+                      <xsd:element name="QuadraSquash" minOccurs="0" />
+                      <xsd:element name="QuadraTenis" minOccurs="0" />
+                      <xsd:element name="QuadraPoliEsportiva" minOccurs="0" />
+                      <xsd:element name="Quintal" minOccurs="0" />
+                      <xsd:element name="RedeTelefone" minOccurs="0" />
+                      <xsd:element name="ReservatorioAgua" minOccurs="0" />
+                      <xsd:element name="Restaurante" minOccurs="0" />
+                      <xsd:element name="Rio" minOccurs="0" />
+                      <xsd:element name="RuaAsfaltada" minOccurs="0" />
+                      <xsd:element name="SalaGinastica" minOccurs="0" />
+                      <xsd:element name="SalaoFestas" minOccurs="0" />
+                      <xsd:element name="SalaoJogos" minOccurs="0" />
+                      <xsd:element name="Sauna" minOccurs="0" />
+                      <xsd:element name="Sede" minOccurs="0" />
+                      <xsd:element name="SegurancaRua" minOccurs="0" />
+                      <xsd:element name="SegurancaPatrimonial" minOccurs="0" />
+                      <xsd:element name="Silos" minOccurs="0" />
+                      <xsd:element name="SistemaIncendio" minOccurs="0" />
+                      <xsd:element name="Telefone" minOccurs="0" />
+                      <xsd:element name="TVCabo" minOccurs="0" />
+                      <xsd:element name="Varanda" minOccurs="0" />
+                      <xsd:element name="Vestiario" minOccurs="0" />
+                      <xsd:element name="VidrosReflexivos" minOccurs="0" />
+                      <xsd:element name="WCEmpregada" minOccurs="0" />
+                      <xsd:element name="EstudaPermuta" minOccurs="0" />
+                      <xsd:element name="DepositoSubsolo" minOccurs="0" />
+                      <xsd:element name="Closet" minOccurs="0" />
+                      <xsd:element name="Hidromassagem" minOccurs="0" />
+                      <xsd:element name="Lareira" minOccurs="0" />
+                      <xsd:element name="FrenteMar" minOccurs="0" />
+                      <xsd:element name="AndarInteiro" minOccurs="0" />
+                      <xsd:element name="AreaServico" minOccurs="0" />
+                      <xsd:element name="Bosque" minOccurs="0" />
+                      <xsd:element name="CampoFutebol" minOccurs="0" />
+                      <xsd:element name="CasaCaseiro" minOccurs="0" />
+                      <xsd:element name="CasaFundo" minOccurs="0" />
+                      <xsd:element name="CasaPrincipal" minOccurs="0" />
+                      <xsd:element name="Caseiro" minOccurs="0" />
+                      <xsd:element name="ComServico" minOccurs="0" />
+                      <xsd:element name="CozinhaAzulejada" minOccurs="0" />
+                      <xsd:element name="Despensa" minOccurs="0" />
+                      <xsd:element name="EnergiaEletrica" minOccurs="0" />
+                      <xsd:element name="EntradaServicoIndependente" minOccurs="0" />
+                      <xsd:element name="EntradaFacilitada" minOccurs="0" />
+                      <xsd:element name="EntradaLateral" minOccurs="0" />
+                      <xsd:element name="Fogao" minOccurs="0" />
+                      <xsd:element name="Freezer" minOccurs="0" />
+                      <xsd:element name="Geladeira" minOccurs="0" />
+                      <xsd:element name="Geminada" minOccurs="0" />
+                      <xsd:element name="HomeTheater" minOccurs="0" />
+                      <xsd:element name="ImovelExposicao" minOccurs="0" />
+                      <xsd:element name="Interfone" minOccurs="0" />
+                      <xsd:element name="LavaRoupas" minOccurs="0" />
+                      <xsd:element name="LavanderiaColetiva" minOccurs="0" />
+                      <xsd:element name="Isolada" minOccurs="0" />
+                      <xsd:element name="LivingTabuasLargas" minOccurs="0" />
+                      <xsd:element name="MeioAndar" minOccurs="0" />
+                      <xsd:element name="Microondas" minOccurs="0" />
+                      <xsd:element name="Oferta" minOccurs="0" />
+                      <xsd:element name="Paiol" minOccurs="0" />
+                      <xsd:element name="ParaIncorporacao" minOccurs="0" />
+                      <xsd:element name="PistaBicicross" minOccurs="0" />
+                      <xsd:element name="PistaCooper" minOccurs="0" />
+                      <xsd:element name="PistaSkate" minOccurs="0" />
+                      <xsd:element name="Poco" minOccurs="0" />
+                      <xsd:element name="PocoArtesiano" minOccurs="0" />
+                      <xsd:element name="PorteiraFechada" minOccurs="0" />
+                      <xsd:element name="ProntoMorar" minOccurs="0" />
+                      <xsd:element name="Refeitorio" minOccurs="0" />
+                      <xsd:element name="RoupaBanho" minOccurs="0" />
+                      <xsd:element name="RoupaCama" minOccurs="0" />
+                      <xsd:element name="RoupaMesa" minOccurs="0" />
+                      <xsd:element name="SalaAlmoco" minOccurs="0" />
+                      <xsd:element name="SalaJantar" minOccurs="0" />
+                      <xsd:element name="SalaIntima" minOccurs="0" />
+                      <xsd:element name="SalaVideo" minOccurs="0" />
+                      <xsd:element name="SegurancaInterna" minOccurs="0" />
+                      <xsd:element name="Semigeminad" minOccurs="0" />
+                      <xsd:element name="SpaHidromassagem" minOccurs="0" />
+                      <xsd:element name="StandVendasLocal" minOccurs="0" />
+                      <xsd:element name="TV" minOccurs="0" />
+                      <xsd:element name="UtensiliosCozinha" minOccurs="0" />
+                      <xsd:element name="UtilizeFGTS" minOccurs="0" />
+                      <xsd:element name="VentiladoresTeto" minOccurs="0" />
+                      <xsd:element name="VisiteImovelDecorado" minOccurs="0" />
+                      <xsd:element name="Clube" minOccurs="0" />
+                      <xsd:element name="ChildrenCare" minOccurs="0" />
+                      <xsd:element name="Curral" minOccurs="0" />
+                      <xsd:element name="Mobiliado" minOccurs="0" />
+                      <xsd:element name="Recuo" minOccurs="0" />
+                      <xsd:element name="Solarium" minOccurs="0" />
+                      <xsd:element name="CasaMista" minOccurs="0" />
+                      <xsd:element name="CasaAlvenaria" minOccurs="0" />
+                      <xsd:element name="CasaMadeira" minOccurs="0" />
+                      <xsd:element name="Terraco" minOccurs="0" />
+                      <xsd:element name="EmDestaque" minOccurs="0" />
+                      <xsd:element name="Corretores" minOccurs="0" />
+                      <xsd:element name="Descricao" minOccurs="0" />
+                      <xsd:element name="UF" minOccurs="0" />
+                      <xsd:element name="Fotos" minOccurs="1" />
+                      <xsd:element name="Videos" minOccurs="0" />
+                      <xsd:element name="ValorIPTU" minOccurs="0" />
+                      <xsd:element name="ValorIPTU" minOccurs="0" />
+                      <xsd:element name="QtdPessoasParaTemporada" minOccurs="0" />
+                      <xsd:element name="QuartoWCEmpregada" minOccurs="0" />
+                      <xsd:element name="Lavabo" minOccurs="0" />
+                      <xsd:element name="Semigeminada" minOccurs="0" />
+                      <xsd:element name="Exclusividade" minOccurs="0" />
+                    </xsd:choice>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xs:schema>

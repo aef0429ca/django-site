@@ -1,0 +1,51 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="imoveis">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="imovel" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="id"/>
+              <xs:element type="xs:string" name="endereco"/>
+              <xs:element type="xs:string" name="numero"/>
+              <xs:element type="xs:string" name="complemento"/>
+              <xs:element type="xs:string" name="bairro"/>
+              <xs:element type="xs:string" name="cidade"/>
+              <xs:element type="xs:string" name="uf"/>
+              <xs:element type="xs:string" name="cep"/>
+              <xs:element type="xs:string" name="valordoimovel"  minOccurs="0"/>
+			  <xs:element type="xs:string" name="valordoimovel_min" minOccurs="0"/>
+			  <xs:element type="xs:string" name="valordoimovel_max" minOccurs="0"/>
+              <xs:element type="xs:string" name="valordoaluguel" minOccurs="0"/>
+			  <xs:element type="xs:string" name="valordoaluguel_min" minOccurs="0"/>
+			  <xs:element type="xs:string" name="valordoaluguel_max" minOccurs="0"/>
+			  <xs:element type="xs:string" name="numerodequartos_min" minOccurs="0"/>
+			  <xs:element type="xs:string" name="numerodequartos_max" minOccurs="0"/>
+			  <xs:element type="xs:string" name="QtdSuites_min" minOccurs="0"/>
+			  <xs:element type="xs:string" name="QtdSuites_max" minOccurs="0"/>
+			  <xs:element type="xs:string" name="numerodevagas_min" minOccurs="0"/>
+			  <xs:element type="xs:string" name="numerodevagas_max" minOccurs="0"/>
+			  <xs:element type="xs:string" name="areaprivada_min" minOccurs="0"/>
+			  <xs:element type="xs:string" name="areaprivada_max" minOccurs="0"/>
+              <xs:element type="xs:string" name="numerodequartos" minOccurs="0"/>
+              <xs:element type="xs:string" name="QtdSuites" minOccurs="0"/>
+              <xs:element type="xs:string" name="numerodevagas" minOccurs="0"/>
+              <xs:element type="xs:string" name="areaprivada" minOccurs="0"/>
+              <xs:element type="xs:string" name="situacaodoimovel"/>
+              <xs:element type="xs:string" name="tipo"/>
+              <xs:element type="xs:string" name="subtipo"/>
+              <xs:element type="xs:string" name="descricao"/>
+              <xs:element name="fotos">
+                <xs:complexType>
+                  <xs:choice maxOccurs="unbounded" minOccurs="0">
+                    <xs:element type="xs:string" name="urlfoto"/>
+                  </xs:choice>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

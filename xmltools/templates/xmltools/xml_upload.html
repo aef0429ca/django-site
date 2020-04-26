@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='container'>
+
+  <div class="page-header">
+      <h3>Upload XML from disk</h3>
+  </div>
+  <!--{% if messages %}
+  <div class="alert alert-success">
+    {% for message in messages %}
+      <p class="{{ message.tags }}">{{ message }}</p>
+    {% endfor %}
+  </div>
+   {% endif %} -->
+
+  <div class="row justify-content-center" style="height: 40px;">
+    <p>
+  </div>
+  
+  <div class="row">
+      <div class="col-md-12">
+          <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-info btn-md">Upload</button>
+          </form>
+      </div>    
+    </div>
+  
+    <div class="row">
+      <div class="col-md-12">
+        <p><a href="{% url 'home' %}">Return to home</a></p>
+      </div>      
+    </div>
+
+</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='container'>
+    <div class="row justify-content-center" style="height: 100px;">
+        <p>
+    </div>
+
+    <h4>{{ request.session.output }}</h4>
+    <h4>{{ request.session.pk }}</h4>
+    <h4>{{ request.session.Format }}</h4>
+    
+    <div class="row justify-content-center">
+        <div class="col-md">
+            <a class="btn btn-info btn-sq-lg" href="{% url 'xml_upload' %}">
+                <div><i class="fas fa-upload fa-7x"></div></i><h4>Upload XML</h4></a>
+            </form>
+        </div>
+        <div class="col-md">
+            <a class="btn btn-info btn-sq-lg" href="{% url 'xml_fetch' %}">
+                <div><i class="fas fa-cloud-download-alt fa-7x"></div></i><h4>Fetch XML</h4></a>
+            </form>
+        </div>
+    </div>
+</div>
+
+  
+ </button>
+{% endblock %}
+
+

@@ -1,0 +1,57 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Carga">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Imoveis">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Imovel" maxOccurs="unbounded" minOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="CodigoImovel"/>
+                    <xs:element type="xs:string" name="TipoImovel"/>
+                    <xs:element type="xs:string" name="SubTipoImovel"/>
+                    <xs:element type="xs:string" name="EmDestaque"/>
+                    <xs:element type="xs:string" name="Endereco"/>
+                    <xs:element type="xs:string" name="Numero"/>
+                    <xs:element type="xs:string" name="Complemento"/>
+                    <xs:element type="xs:string" name="Bairro"/>
+                    <xs:element type="xs:string" name="Cidade"/>
+                    <xs:element type="xs:string" name="Uf"/>
+                    <xs:element type="xs:string" name="CEP"/>
+                    <xs:element type="xs:string" name="FotoCorretor" minOccurs="0"/>
+                    <xs:element type="xs:string" name="PrecoRevenda" minOccurs="0"/>
+                    <xs:element type="xs:string" name="PrecoAluguel" minOccurs="0"/>
+                    <xs:element type="xs:string" name="AreaM2Util"/>
+                    <xs:element type="xs:string" name="AreaM2Total"/>
+                    <xs:element type="xs:string" name="AreaM2Terreno"/>
+                    <xs:element type="xs:string" name="QtdDormitorios"/>
+                    <xs:element type="xs:string" name="QtdSuites" minOccurs="0"/>
+                    <xs:element type="xs:string" name="QtdBanheiros" minOccurs="0"/>
+                    <xs:element type="xs:string" name="QtdVagas" minOccurs="0"/>
+                    <xs:element type="xs:string" name="Descricao" minOccurs="0"/>
+                    <xs:element name="Fotos" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Foto" maxOccurs="unbounded" minOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="FotoLegenda"/>
+                                <xs:element type="xs:anyURI" name="FotoUrl"/>
+                                <xs:element type="xs:string" name="Principal"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
