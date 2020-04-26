@@ -9,6 +9,7 @@ import numpy as np
 import collections
 from lxml import etree
 import xml.etree.ElementTree as ET
+import django_project.settings as settings
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -159,14 +160,13 @@ def parse_lopes_to_df(xml_file):
     return df
 
 
-
 def create_profile(df, file_name):
     ''' Run pandas profiling on df to generate file_name as html '''
     profile = pdp.ProfileReport(df)
     # create profile file with html extension
     html_file_name = file_name.split('.')[0] + '.html'
     # write the profile file to this path
-    profile_file = os.path.join(STATICFILES_DIRS, 'profiles', html_file_name)
+    profile_file = os.path.join(settings.PROFILE_PATH, html_file_name)
     # create the profile
     profile.to_file(profile_file)
     del df

@@ -115,7 +115,7 @@ def xml_format_test(request):
                 # filters tags and outputs to final/ dir
                 xml_clean.filter_tags(doc.file_name, xsd_format)
                 # testing validation against xsd    
-                validation_test = xsd_validator.validate_xml(os.path.join(settings.TMP_PATH, doc.file_name), os.path.join(settings.XSD_PATH, xsd_file))
+                validation_test = xsd_validator.validate_xml(os.path.join(settings.DOC_ROOT, doc.file_name), os.path.join(settings.XSD_PATH, xsd_file))
                 request.session['output'] = validation_test
                 if validation_test['Status']:
                     request.session['Format'] = xsd_format.upper()
@@ -152,7 +152,7 @@ def xml_analyze(request):
             df = xml_profiling.parse_lopes_to_df(file_name)    
         # Run profiling on df and write to file_name
         profile_file = xml_profiling.create_profile(df, doc.file_name)
-        request.session['profile_file'] = os.path.join('profiles', profile_file)
+        request.session['profile_file'] = os.path.join(settings.PROFILE_URL, profile_file)
         
         return redirect('xml_profile.html')
     else:

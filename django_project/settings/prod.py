@@ -17,7 +17,7 @@ DATABASES = {
 
 # Paths
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR =  os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # django-site
 
 STATIC_URL = '/static/'
@@ -28,7 +28,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 DOC_URL = '/documents/'
-DOC_ROOT = os.path.join(BASE_DIR, 'documents')
-TMP_PATH = os.path.join(BASE_DIR, 'documents/tmp')
-FINAL_PATH = os.path.join(BASE_DIR, 'documents/final')
-XSD_PATH = os.path.join(BASE_DIR, '../xmltools/config/xsd')
+PROFILE_URL = '/media/documents/profiles/'
+DOC_ROOT = os.path.join(MEDIA_ROOT, 'documents')
+TMP_PATH = os.path.join(MEDIA_ROOT, 'documents/tmp')
+FINAL_PATH = os.path.join(MEDIA_ROOT, 'documents/final')
+PROFILE_PATH = os.path.join(MEDIA_ROOT, 'documents/profiles')
+XSD_PATH = os.path.join(BASE_DIR, 'xmltools/config/xsd') 

@@ -10,7 +10,7 @@
     </div>
     <div class="content">
      <p><a href="{% url 'home' %}">Return to home</a></p>
-    <embed type="text/html" class='embed-profile' src= {% static request.session.profile_file %}>
+    <embed type="text/html" class='embed-profile' src= {{ request.session.profile_file }}>
      </div>
 </div>
 {% endblock %}
