@@ -99,23 +99,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-# Paths
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# django-site
-
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, '/static')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/'),]
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
-
-DOC_URL = '/documents/'
-DOC_ROOT = os.path.join(BASE_DIR, '../media/documents')
-TMP_PATH = os.path.join(BASE_DIR, '../media/documents/tmp')
-FINAL_PATH = os.path.join(BASE_DIR, '../media/documents/final')
-XSD_PATH = os.path.join(BASE_DIR, '../xmltools/config/xsd') 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
