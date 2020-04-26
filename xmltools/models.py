@@ -8,7 +8,7 @@ FORMAT_CHOICES = (("UNKNOWN","UNKNOWN"),
 
 
 class Document(models.Model):
-    document = models.FileField(upload_to='media/documents/')
+    document = models.FileField(upload_to='documents')
     file_name = models.CharField(max_length=24, blank=True)
     profile_file = models.CharField(max_length=30, blank=True)
     format_guess = models.CharField(max_length = 10, choices=FORMAT_CHOICES, default="0", blank=False)
