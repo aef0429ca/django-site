@@ -28,7 +28,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 DOC_URL = '/documents/'
-DOC_ROOT = os.path.join(BASE_DIR, 'media/documents')
-TMP_PATH = os.path.join(BASE_DIR, 'media/documents/tmp')
-FINAL_PATH = os.path.join(BASE_DIR, 'media/documents/final')
+DOC_ROOT = os.path.join(BASE_DIR, 'documents')
+TMP_PATH = os.path.join(BASE_DIR, 'documents/tmp')
+FINAL_PATH = os.path.join(BASE_DIR, 'documents/final')
 XSD_PATH = os.path.join(BASE_DIR, '../xmltools/config/xsd')
