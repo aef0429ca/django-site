@@ -10,12 +10,13 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django import forms
 from django.urls import reverse
 import django_project.settings as settings
+import logging
 
 from xmltools.models import Document
 from .forms import DocumentForm, UrlForm, FormatForm
 from .backend import xml_clean, xml_profiling, xsd_validator
 
-XSD_FORMATS = ['zap', 'gaia', 'lopes']
+XSD_FORMATS = ['zap', 'lopes', 'gaia']
 
 FORMAT_CHOICES = ((0, "UNKNOWN"),
                   (1, "ZAP"),
@@ -87,6 +88,7 @@ def xml_fetch(request):
 
 
 def xml_format_test(request):
+    logging.warning('Inside xml_format_test func')
     ''' Takes raw input and formats to stripped xml
         Ooutputs to folder /final '''
     doc_instance = get_object_or_404(Document, pk=request.session['pk'])
@@ -115,15 +117,16 @@ def xml_format_test(request):
                 # filters tags and outputs to final/ dir
                 xml_clean.filter_tags(doc.file_name, xsd_format)
                 # testing validation against xsd    
-                validation_test = xsd_validator.validate_xml(os.path.join(settings.DOC_ROOT, doc.file_name), os.path.join(settings.XSD_PATH, xsd_file))
+                validation_test = xsd_validator.validate_xml(os.path.join(settings.FINAL_PATH, doc.file_name), os.path.join(settings.XSD_PATH, xsd_file))
+                logging.warning(validation_test)
                 request.session['output'] = validation_test
                 if validation_test['Status']:
                     request.session['Format'] = xsd_format.upper()
+                    logging.warning(xsd_format.upper())
                     break
                 else:
                     request.session['Format'] = 'Unknown'
-            return redirect('xml_analyze.html')    
-            # return render(request, 'xmltools/xml_analyze.html', {'formatform': formatform})
+            return redirect('xml_analyze.html')
         else:
             # form is invalid,  stay on same page
             messages.warning(request, 'Please correct form error(s) below.')

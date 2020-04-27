@@ -4,6 +4,7 @@ from io import StringIO, BytesIO
 import sys
 import os
 import django_project.settings as settings
+import logging
 
 
 def validate_xml(filename_xml, filename_xsd):
@@ -35,7 +36,7 @@ def validate_xml(filename_xml, filename_xsd):
             # print('Schema validation error, see error_schema.log')
             output['Error'] = 'Fail, invalid format'
             output['Status'] = False
-            with open(os.path.join(settings.XMLSCHEMA_LOG_PATH, 'error_schema.log'), 'w') as error_log_file:
+            with open(os.path.join(settings.XMLSCHEMA_LOG_PATH, 'error_schema.log'), 'a') as error_log_file:
                 error_log_file.write(str(err.error_log))
             # quit()
         except:
@@ -52,8 +53,8 @@ def validate_xml(filename_xml, filename_xsd):
         # print('XML Syntax Error, see error_syntax.log')
         output['Error'] = 'Fail, Syntax Error'
         output['Status'] = False
-        with open(os.path.join(settings.XMLSCHEMA_LOG_PATH, 'error_schema.log'), 'w') as error_log_file:
-            error_log_file.write(str(err.error_log))
+        with open(os.path.join(settings.XMLSCHEMA_LOG_PATH, 'error_schema.log'), 'a') as error_log_file:
+            error_log_file.write("".join([str(err.error_log),'\n']))
     except:
         print('Unknown error, exiting.')
         output['Error'] = 'Unknown error, exiting.'

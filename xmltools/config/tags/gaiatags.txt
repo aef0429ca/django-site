@@ -29,7 +29,7 @@
 <FotoUrl
 <Principal
 </Foto
-</Fotos>
+</Fotos
 </Imovel>
 </Imoveis>
 </Carga>
