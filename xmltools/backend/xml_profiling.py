@@ -11,12 +11,11 @@ from lxml import etree
 import xml.etree.ElementTree as ET
 import django_project.settings as settings
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
-DOC_PATH = os.path.join(BASE_DIR, 'media/documents')
-FORMAT_XSD = {'zap': 'zap.xsd', 'ingaia': 'ingaia.xsd', 'etica': 'etica.xsd', 'lopes': 'lopes.xsd'}
+# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
+# DOC_PATH = os.path.join(BASE_DIR, 'media/documents')
 
 
 def parse_zap_to_df(xml_file):

@@ -30,6 +30,6 @@
 <Principal
 </Foto
 </Fotos
-</Imovel
-</Imoveis
-</Carga
+</Imovel>
+</Imoveis>
+</Carga>

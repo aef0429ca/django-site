@@ -21,6 +21,6 @@
 <descricao
 <fotos
 <urlfoto
-</fotos
-</imovel
-</imoveis
+</fotos>
+</imovel>
+</imoveis>
