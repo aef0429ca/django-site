@@ -1,4 +1,5 @@
 from django.urls import path
+from django.views.generic.base import TemplateView
 from .views import (
     PostListView, 
     PostDetailView, 
@@ -17,5 +18,7 @@ urlpatterns = [
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('about/', views.about, name='blog-about'),
+    path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),
+    ),
 ]
 
