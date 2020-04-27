@@ -25,12 +25,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, '/static')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/'),]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+DOC_ROOT = os.path.join(MEDIA_ROOT, 'documents')
 
+MEDIA_URL = '/media/'
 DOC_URL = '/documents/'
 PROFILE_URL = '/media/documents/profiles/'
-DOC_ROOT = os.path.join(MEDIA_ROOT, 'documents')
+
 TMP_PATH = os.path.join(MEDIA_ROOT, 'documents/tmp')
 FINAL_PATH = os.path.join(MEDIA_ROOT, 'documents/final')
+TAGS_PATH = os.path.join(BASE_DIR, 'xmltools/config/tags')
+XSD_PATH = os.path.join(BASE_DIR, 'xmltools/config/xsd')
+XMLSCHEMA_LOG_PATH = os.path.join(BASE_DIR, 'xmltools/config/logs')
 PROFILE_PATH = os.path.join(MEDIA_ROOT, 'documents/profiles')
-XSD_PATH = os.path.join(BASE_DIR, 'xmltools/config/xsd') 
