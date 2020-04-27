@@ -16,7 +16,7 @@ from xmltools.models import Document
 from .forms import DocumentForm, UrlForm, FormatForm
 from .backend import xml_clean, xml_profiling, xsd_validator
 
-XSD_FORMATS = ['zap', 'lopes', 'gaia']
+XSD_FORMATS = ['zap', 'gaia', 'lopes']
 
 FORMAT_CHOICES = ((0, "UNKNOWN"),
                   (1, "ZAP"),

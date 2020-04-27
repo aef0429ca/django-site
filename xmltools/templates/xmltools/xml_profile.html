@@ -6,7 +6,8 @@
   <div class="container text-center">
     <div class="page-header">
         <h5>Original File: {{ request.session.orig_file }}</h5>
-        <h5>Pandas Profile: {{ request.session.profile_file }}</h5>
+        <!--<h5>Pandas Profile: {{ request.session.profile_file }}</h5>-->
+        <h5><a href="{{ request.session.profile_file }}">Download profile as html</a></h5>
     </div>
     <div class="content">
      <p><a href="{% url 'home' %}">Return to home</a></p>
