@@ -9,6 +9,7 @@ WORKDIR /code
 RUN apt-get update \
     && apt-get -y install curl \
 	libxml2-utils \
+	dos2unix \
 	locate
 
 ADD requirements.txt /code/

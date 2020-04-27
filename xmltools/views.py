@@ -145,7 +145,7 @@ def xml_analyze(request):
         doc = Document.objects.get(pk=pk)
         format = request.session['Format']
         # Get file path to cleaned xml
-        file_name = os.path.join(settings.DOC_ROOT, doc.file_name)
+        file_name = os.path.join(settings.FINAL_PATH, doc.file_name)
         # Pass xml into parsing and return df
         if format == 'ZAP':
             df = xml_profiling.parse_zap_to_df(file_name)
