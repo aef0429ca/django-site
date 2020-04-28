@@ -4,7 +4,7 @@ from . import views
 
 # app_name = 'xmltools'
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('/', views.home, name='home'),
     path('/xml_upload.html', views.xml_upload, name='xml_upload'),
     path('/xml_fetch.html', views.xml_fetch, name='xml_fetch'),
     path('/xml_format_test.html', views.xml_format_test, name='xml_format_test'),

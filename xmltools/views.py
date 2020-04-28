@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 import requests
 import subprocess
@@ -31,7 +32,6 @@ def home(request):
     return render(request, 'xmltools/index.html')
 
 
-
 def xml_upload(request):
     if request.POST:
         request.session.flush()
@@ -59,7 +59,6 @@ def xml_upload(request):
     })
 
 
-
 def xml_fetch(request):
     if request.POST:
         urlform = UrlForm(request.POST)
@@ -77,19 +76,20 @@ def xml_fetch(request):
             doc.save(update_fields=['file_name'])
             request.session['pk'] = doc.pk
             request.session['orig_file'] = tmp_file
-            messages.success(request, 'File registered and saved successfully!')
             
+            if os.path.getsize(os.path.join(settings.DOC_ROOT, tmp_file)) == 0:
+                messages.error(request, 'File is of size 0!')
+            else:
+                messages.success(request, 'File registered and saved successfully!')
             context = {'doc':doc}
-            return redirect('xml_format_test.html')
-
         else:
             messages.warning(request, 'Please correct form error(s) below.') 
+        return redirect('xml_format_test.html')
     else:
         urlform = UrlForm()
         return render(request, 'xmltools/xml_fetch.html', {
          'urlform': urlform
          })
-
 
 
 def xml_format_test(request):
@@ -144,7 +144,6 @@ def xml_format_test(request):
         })
 
 
-
 def xml_analyze(request):
     if request.POST:
         pk = request.session['pk']
@@ -166,7 +165,6 @@ def xml_analyze(request):
         return redirect('xml_profile.html')
     else:
         return render(request, 'xmltools/xml_analyze.html')
-
 
 
 def xml_profile(request):
