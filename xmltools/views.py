@@ -30,14 +30,15 @@ FORMAT_CHOICES = ((0, "UNKNOWN"),
 
 @login_required
 def home(request):
-    # request.session.flush()
+    for key in ['pk', 'orig_file', 'output', 'Format', 'Format_guess']:
+            request.session[key] = None
     return render(request, 'xmltools/index.html')
-
 
 
 def xml_upload(request):
     if request.POST:
-        # request.session.flush()
+        for key in ['pk', 'orig_file', 'output', 'Format', 'Format_guess']:
+            request.session[key] = None
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             form = form.save()
