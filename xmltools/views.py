@@ -6,6 +6,7 @@ import subprocess
 from urllib.parse import urlsplit, urlencode
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.core.files import File
 from django.http import HttpResponse, HttpResponseRedirect
@@ -26,15 +27,17 @@ FORMAT_CHOICES = ((0, "UNKNOWN"),
                   (3, "LOPES"),
 )
 
+
 @login_required
 def home(request):
-    request.session.flush()
+    # request.session.flush()
     return render(request, 'xmltools/index.html')
+
 
 
 def xml_upload(request):
     if request.POST:
-        request.session.flush()
+        # request.session.flush()
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             form = form.save()
@@ -57,6 +60,7 @@ def xml_upload(request):
     return render(request, 'xmltools/xml_upload.html', {
         'form': form
     })
+
 
 
 def xml_fetch(request):
@@ -90,6 +94,7 @@ def xml_fetch(request):
         return render(request, 'xmltools/xml_fetch.html', {
          'urlform': urlform
          })
+
 
 
 def xml_format_test(request):
@@ -144,6 +149,7 @@ def xml_format_test(request):
         })
 
 
+
 def xml_analyze(request):
     if request.POST:
         pk = request.session['pk']
@@ -165,6 +171,7 @@ def xml_analyze(request):
         return redirect('xml_profile.html')
     else:
         return render(request, 'xmltools/xml_analyze.html')
+
 
 
 def xml_profile(request):
