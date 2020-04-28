@@ -7,10 +7,10 @@ try:
     with open(CONFIG_FILE) as config_file:
         config = json.load(config_file)
         config['PROD']
+        SECRET_KEY = config['SECRET_KEY']
     from .prod import *
-
-
-except KeyError:
+    
+     
+except EnvironmentError:
     from .dev import *
 
-SECRET_KEY = config['SECRET_KEY']

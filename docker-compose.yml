@@ -7,7 +7,7 @@ services:
     restart: always
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: SKAL123vit
     volumes:
       - pgdata:/var/lib/postgresql/data
       - pgconf:/etc/postgresql
