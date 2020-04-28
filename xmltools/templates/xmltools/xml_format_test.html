@@ -17,6 +17,7 @@
   <div class="row">
     <div class="col-md-12" style="padding-bottom: 50px;">
       <form method="POST" enctype="multipart/form-data" name="formatform">
+        <h6>Take a guess? (optional)</h6>
         {% csrf_token %}
         {{ formatform.format_guess }}
         <div style="padding-bottom: 50px;"></div>
