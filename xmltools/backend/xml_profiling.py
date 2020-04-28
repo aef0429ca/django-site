@@ -28,7 +28,7 @@ def parse_zap_to_df(xml_file):
     """
 
     # Columns that verifies the format
-    df_cols = ['CodigoImovel','CodigoCliente','TipoImovel','SubTipoImovel','CategoriaImovel','Cidade','Bairro','Endereco','Numero','Complemento','CEP','PrecoVenda','PrecoLocacao','AreaUtil','AreaTotal','QtdDormitorios','QtdSuites','QtdBanheiros','QtdSalas','QtdVagas','QtdElevador','QtdUnidadesAndar','QtdAndar','AnoConstrucao','EmDestaque','Descricao','UF','Fotos']
+    df_cols = ['CodigoImovel','TipoImovel','SubTipoImovel','CategoriaImovel','Cidade','Bairro','Endereco','Numero','Complemento','CEP','PrecoVenda','PrecoLocacao','AreaUtil','AreaTotal','QtdDormitorios','QtdSuites','QtdBanheiros','QtdSalas','QtdVagas','QtdElevador','QtdUnidadesAndar','QtdAndar','AnoConstrucao','EmDestaque','Descricao','UF','Fotos']
 
 
     xtree = ET.parse(xml_file)
