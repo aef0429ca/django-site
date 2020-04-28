@@ -31,7 +31,7 @@ def home(request):
     return render(request, 'xmltools/index.html')
 
 
-@login_required
+
 def xml_upload(request):
     if request.POST:
         request.session.flush()
@@ -59,7 +59,7 @@ def xml_upload(request):
     })
 
 
-@login_required
+
 def xml_fetch(request):
     if request.POST:
         urlform = UrlForm(request.POST)
@@ -91,7 +91,7 @@ def xml_fetch(request):
          })
 
 
-@login_required
+
 def xml_format_test(request):
     logging.warning('Inside xml_format_test func')
     ''' Takes raw input and formats to stripped xml
@@ -144,7 +144,7 @@ def xml_format_test(request):
         })
 
 
-@login_required
+
 def xml_analyze(request):
     if request.POST:
         pk = request.session['pk']
@@ -168,6 +168,6 @@ def xml_analyze(request):
         return render(request, 'xmltools/xml_analyze.html')
 
 
-@login_required
+
 def xml_profile(request):
     return render(request, 'xmltools/xml_profile.html')
