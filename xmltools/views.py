@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.core.files import File
 from django.http import HttpResponse, HttpResponseRedirect
+from django.template import loader
 from django import forms
 from django.urls import reverse
 import django_project.settings as settings
@@ -37,11 +38,8 @@ def xml_upload(request):
     if request.POST:
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
-            logging.warning(form.cleaned_data)
             form = form.save()
-            logging.warning('Form is valid!')
             doc = Document.objects.get(pk=form.id)
-
             tmp_file = 'temp_'+ str(time.strftime('%Y%m%d%H%M%S')) + '.xml'
             os.rename(doc.document.path, os.path.join(settings.DOC_ROOT, tmp_file))
             # updates the document record with the temporary file name
@@ -51,7 +49,6 @@ def xml_upload(request):
 
             return redirect('xml_format_test', form.id)
         else:
-            logging.warning('Form is invalid!')
             messages.warning(request, 'Please correct form error(s) below.') 
     else:
         form = DocumentForm()
@@ -91,20 +88,20 @@ def xml_fetch(request):
 
 
 def xml_format_test(request, pk):
-    request.session['Format_guess'] = 'UNKNOWN'
     logging.warning('Inside xml_format_test func')
     ''' Takes raw input and formats to stripped xml
         outputs to folder /final '''
     if request.POST:
         form = FormatForm(request.POST)
         if form.is_valid():
-            format_test = form.save()
+            # form = form.save()
             doc = Document.objects.get(pk=pk)
-            request.session['Format_guess'] = form.cleaned_data['format_guess']
-            
+            doc.format_guess = form.cleaned_data['format_guess']
+            doc.save()
+            # doc.save(update_fields=['format_guess'])
+
             # xmllint, one tag per row with breaks, outputs to tmp/ dir
             xml_clean.pretty_print(doc.file_name)
-            
             if doc.format_guess != 'UNKNOWN':
             # move guessed format to front of list
                 XSD_FORMATS.insert(0, XSD_FORMATS.pop(XSD_FORMATS.index(doc.format_guess.lower())))
@@ -119,25 +116,26 @@ def xml_format_test(request, pk):
                 xml_clean.filter_tags(doc.file_name, xsd_format)
                 # testing validation against xsd    
                 validation_test = xsd_validator.validate_xml(os.path.join(settings.FINAL_PATH, doc.file_name), os.path.join(settings.XSD_PATH, xsd_file))
-                logging.warning(validation_test)
                 
                 if validation_test['Status']:
-                    # request.session['Format'] = xsd_format.upper()
-                    # doc = Document.objects.get(pk=pk)
-                    doc.format_valid = validation_test
-                    doc.save(update_fields=['format_valid'])
-
-                    logging.warning(xsd_format.upper())
+                    doc.format_valid = xsd_format.lower()
+                    doc.save()
                     break
                 else:
-                    # request.session['Format'] = 'Unknown'
-                    context['Format'] = 'Unknown'
+                    doc.format_valid = 'UNKNOWN'
+                    doc.save(update_fields=['format_valid'])
+
+            context = {'pk': pk, 'format_valid': xsd_format.lower()}
+
+            template = loader.get_template('xmltools/xml_analyze.html')
+            # return HttpResponse(template.render(context, request))
+            return redirect('xml_analyze', doc.id) #fail
+            # return render(request, 'xmltools/xml_analyze.html', pk)
             
-            return redirect('xml_analyze.html', form.id)
         else:
             # form is invalid,  stay on same page
             messages.warning(request, 'Please correct form error(s) below.')
-            return redirect('xml_analyze.html')
+            # return redirect('xml_analyze.html')
     else:
         # For when GETing the page
         formatform = FormatForm()
@@ -146,30 +144,32 @@ def xml_format_test(request, pk):
         })
 
 
-
-def xml_analyze(request):
+def xml_analyze(request, pk):
+    doc = Document.objects.get(pk=pk)
     if request.POST:
-        pk = request.session['pk']
-        doc = Document.objects.get(pk=pk)
-        format = request.session['Format']
+        format = doc.format_valid
         # Get file path to cleaned xml
         file_name = os.path.join(settings.FINAL_PATH, doc.file_name)
         # Pass xml into parsing and return df
-        if format == 'ZAP':
+        if format == 'zap':
             df = xml_profiling.parse_zap_to_df(file_name)
-        elif format == 'GAIA':
+        elif format == 'gaia':
             df = xml_profiling.parse_gaia_to_df(file_name)
-        elif format == 'LOPES':
+        elif format == 'lopes':
             df = xml_profiling.parse_lopes_to_df(file_name)    
         # Run profiling on df and write to file_name
         profile_file = xml_profiling.create_profile(df, doc.file_name)
-        request.session['profile_file'] = os.path.join(settings.PROFILE_URL, profile_file)
+        doc.profile_file = os.path.join('/media/documents/profiles', profile_file)
+        doc.save(update_fields=['profile_file'])
+        context = {'format': format }
         
-        return redirect('xml_profile.html')
+        return redirect('xml_profile', doc.id)
     else:
-        return render(request, 'xmltools/xml_analyze.html')
+        context = { 'format_valid': doc.format_valid }
+        return render(request, 'xmltools/xml_analyze.html', context=context )
 
 
-
-def xml_profile(request):
-    return render(request, 'xmltools/xml_profile.html')
+def xml_profile(request, pk):
+    doc = Document.objects.get(pk=pk)
+    context = { 'file_name': doc.file_name, 'profile_file': doc.profile_file }
+    return render(request, 'xmltools/xml_profile.html', context=context)
