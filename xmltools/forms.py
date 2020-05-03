@@ -9,6 +9,7 @@ class DocumentForm(forms.ModelForm):
         fields = ('document', 'file_name',)
         widgets = {'file_name': forms.HiddenInput()}
 
+
 class UrlForm(forms.ModelForm):
     class Meta:
         model = Document

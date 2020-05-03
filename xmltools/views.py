@@ -30,38 +30,32 @@ FORMAT_CHOICES = ((0, "UNKNOWN"),
 
 @login_required
 def home(request):
-    for key in ['pk', 'orig_file', 'output', 'Format', 'Format_guess']:
-            request.session[key] = None
     return render(request, 'xmltools/index.html')
 
 
 def xml_upload(request):
     if request.POST:
-        for key in ['pk', 'orig_file', 'output', 'Format', 'Format_guess']:
-            request.session[key] = None
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
+            logging.warning(form.cleaned_data)
             form = form.save()
+            logging.warning('Form is valid!')
             doc = Document.objects.get(pk=form.id)
-            
+
             tmp_file = 'temp_'+ str(time.strftime('%Y%m%d%H%M%S')) + '.xml'
             os.rename(doc.document.path, os.path.join(settings.DOC_ROOT, tmp_file))
+            # updates the document record with the temporary file name
             doc.file_name = tmp_file
             doc.save(update_fields=['file_name'])
             messages.success(request, 'File uploaded and saved successfully!')
-            request.session['pk'] = doc.pk
-            request.session['orig_file'] = os.path.basename(doc.document.path)
-            
-            return redirect('xml_format_test.html')
-            # formatform = FormatForm()
-            # return render(request, 'xmltools/xml_format_test.html', { 'formatform': formatform
-            # })
+
+            return redirect('xml_format_test', form.id)
+        else:
+            logging.warning('Form is invalid!')
+            messages.warning(request, 'Please correct form error(s) below.') 
     else:
         form = DocumentForm()
-    return render(request, 'xmltools/xml_upload.html', {
-        'form': form
-    })
-
+        return render(request, 'xmltools/xml_upload.html', {'form': form })
 
 
 def xml_fetch(request):
@@ -69,27 +63,26 @@ def xml_fetch(request):
         urlform = UrlForm(request.POST)
         if urlform.is_valid():
             form = urlform.save()
-            url = urlform.cleaned_data['url']
+            doc = Document.objects.get(pk=form.id)
             tmp_file = 'temp_'+ str(time.strftime('%Y%m%d%H%M%S')) + '.xml'
                 
-            response = requests.get(url)
+            response = requests.get(doc.url)
             with open(os.path.join(settings.DOC_ROOT, tmp_file), 'wb') as file:
                file.write(response.content)
-            
-            doc = Document.objects.get(pk=form.id)
+
+            # updates the document record with the temporary file name
             doc.file_name = tmp_file
             doc.save(update_fields=['file_name'])
-            request.session['pk'] = doc.pk
-            request.session['orig_file'] = tmp_file
-            
+                        
             if os.path.getsize(os.path.join(settings.DOC_ROOT, tmp_file)) == 0:
-                messages.error(request, 'File is of size 0!')
+                messages.error(request, 'File is of size 0! Verify that file exists at origin.')
             else:
                 messages.success(request, 'File registered and saved successfully!')
-            context = {'doc':doc}
         else:
             messages.warning(request, 'Please correct form error(s) below.') 
-        return redirect('xml_format_test.html')
+        
+        # return redirect('xml_format_test.html')
+        return render(request, 'xmltools/xml_format_test.html', form.id)
     else:
         urlform = UrlForm()
         return render(request, 'xmltools/xml_fetch.html', {
@@ -97,53 +90,56 @@ def xml_fetch(request):
          })
 
 
-
-def xml_format_test(request):
+def xml_format_test(request, pk):
+    request.session['Format_guess'] = 'UNKNOWN'
     logging.warning('Inside xml_format_test func')
     ''' Takes raw input and formats to stripped xml
-        Ooutputs to folder /final '''
-    doc_instance = get_object_or_404(Document, pk=request.session['pk'])
+        outputs to folder /final '''
     if request.POST:
         form = FormatForm(request.POST)
         if form.is_valid():
-            doc_instance.format_guess = form.cleaned_data['format_guess']
-            doc_instance.save()
-            
-            pk = request.session['pk']
+            format_test = form.save()
             doc = Document.objects.get(pk=pk)
             request.session['Format_guess'] = form.cleaned_data['format_guess']
-            format_guess = form.cleaned_data['format_guess']
+            
             # xmllint, one tag per row with breaks, outputs to tmp/ dir
             xml_clean.pretty_print(doc.file_name)
             
-            if format_guess != 'UNKNOWN':
+            if doc.format_guess != 'UNKNOWN':
             # move guessed format to front of list
-                XSD_FORMATS.insert(0, XSD_FORMATS.pop(XSD_FORMATS.index(format_guess.lower())))
+                XSD_FORMATS.insert(0, XSD_FORMATS.pop(XSD_FORMATS.index(doc.format_guess.lower())))
             else:
                 pass
             # test formats one by one as per order in XSD_FORMATS
             # filter on tags for each format and attempt to validate
             for xsd_format in XSD_FORMATS:
+                context = {}
                 xsd_file = xsd_format.lower() + '.xsd'
                 # filters tags and outputs to final/ dir
                 xml_clean.filter_tags(doc.file_name, xsd_format)
                 # testing validation against xsd    
                 validation_test = xsd_validator.validate_xml(os.path.join(settings.FINAL_PATH, doc.file_name), os.path.join(settings.XSD_PATH, xsd_file))
                 logging.warning(validation_test)
-                request.session['output'] = validation_test
+                
                 if validation_test['Status']:
-                    request.session['Format'] = xsd_format.upper()
+                    # request.session['Format'] = xsd_format.upper()
+                    # doc = Document.objects.get(pk=pk)
+                    doc.format_valid = validation_test
+                    doc.save(update_fields=['format_valid'])
+
                     logging.warning(xsd_format.upper())
                     break
                 else:
-                    request.session['Format'] = 'Unknown'
-            return redirect('xml_analyze.html')
+                    # request.session['Format'] = 'Unknown'
+                    context['Format'] = 'Unknown'
+            
+            return redirect('xml_analyze.html', form.id)
         else:
             # form is invalid,  stay on same page
             messages.warning(request, 'Please correct form error(s) below.')
-            return redirect('xml_analyze.html')    
+            return redirect('xml_analyze.html')
     else:
-        # For when loading the page via GET
+        # For when GETing the page
         formatform = FormatForm()
         return render(request, 'xmltools/xml_format_test.html', {
         'formatform': formatform
