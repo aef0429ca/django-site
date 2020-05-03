@@ -21,12 +21,7 @@ from .forms import DocumentForm, UrlForm, FormatForm
 from .backend import xml_clean, xml_profiling, xsd_validator
 
 XSD_FORMATS = ['zap', 'gaia', 'lopes']
-
-FORMAT_CHOICES = ((0, "UNKNOWN"),
-                  (1, "ZAP"),
-                  (2, "GAIA"),
-                  (3, "LOPES"),
-)
+FORMAT_CHOICES = ((0, "UNKNOWN"), (1, "ZAP"), (2, "GAIA"), (3, "LOPES"),)
 
 
 @login_required
