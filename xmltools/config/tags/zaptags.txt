@@ -16,6 +16,7 @@
 <CEP
 <Cep
 <UF
+<Uf
 <PrecoVenda
 <PrecoLocacao
 <AreaUtil
@@ -28,6 +29,7 @@
 <AnoConstrucao
 <QtdAndar
 <QtdUnidadesAndar
+<Descricao
 <Fotos
 <Foto
 <NomeArquivo
