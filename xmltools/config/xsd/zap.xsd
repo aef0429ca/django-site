@@ -20,7 +20,8 @@
                       <xsd:element name="Endereco" minOccurs="0" />
                       <xsd:element name="Numero" minOccurs="0" />
                       <xsd:element name="Complemento" minOccurs="0" />
-                      <xsd:element name="CEP" minOccurs="0" />
+                      <xsd:element name="Cep" minOccurs="0" />
+                     <xsd:element name="CEP" minOccurs="0" />
                       <xsd:element name="PrecoVenda" minOccurs="0" />
                       <xsd:element name="PrecoLocacao" minOccurs="0" />
                       <xsd:element name="PrecoLocacaoTemporada" minOccurs="0" />
