@@ -14,7 +14,7 @@ from django.template import loader
 from django import forms
 from django.urls import reverse
 import django_project.settings as settings
-# import logging
+import logging
 
 from xmltools.models import Document
 from .forms import DocumentForm, UrlForm, FormatForm
@@ -111,7 +111,7 @@ def xml_format_test(request, pk):
                 xml_clean.filter_tags(doc.file_name, xsd_format)
                 # testing validation against xsd    
                 validation_test = xsd_validator.validate_xml(os.path.join(settings.FINAL_PATH, doc.file_name), os.path.join(settings.XSD_PATH, xsd_file))
-                
+                logging.warning(validation_test)
                 if validation_test['Status']:
                     doc.format_valid = xsd_format.lower()
                     doc.save()
@@ -157,6 +157,7 @@ def xml_analyze(request, pk):
         doc.profile_file = os.path.join('/media/documents/profiles', profile_file)
         doc.save(update_fields=['profile_file'])
         context = {'format': format }
+
         
         return redirect('xml_profile', doc.id)
     else:

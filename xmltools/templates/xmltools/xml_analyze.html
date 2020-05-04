@@ -11,7 +11,7 @@
         {% csrf_token %}
         {{ urlform.as_p }}
                  
-         {% if format_valid == "UNKOWN" %}
+         {% if format_valid not in 'zap,gaia,lopes' %}
              <h2 class='warning'>{{ request.session.Format }}</h2>
              <i class="fas fa-question-circle fa-7x"  style="color:#ffc107;"></i>
          {% elif format_valid == "zap" %}
