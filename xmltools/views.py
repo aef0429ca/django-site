@@ -73,8 +73,8 @@ def xml_fetch(request):
         else:
             messages.warning(request, 'Please correct form error(s) below.') 
         
-        # return redirect('xml_format_test.html')
-        return render(request, 'xmltools/xml_format_test.html', form.id)
+        return redirect('xml_format_test', form.id)
+        # return render(request, 'xmltools/xml_format_test.html', form.id)
     else:
         urlform = UrlForm()
         return render(request, 'xmltools/xml_fetch.html', {
