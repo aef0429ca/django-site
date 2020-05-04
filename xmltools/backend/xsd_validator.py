@@ -4,7 +4,7 @@ from io import StringIO, BytesIO
 import sys
 import os
 import django_project.settings as settings
-import logging
+# import logging
 
 
 def validate_xml(filename_xml, filename_xsd):

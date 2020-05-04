@@ -1,6 +1,6 @@
 import os
 import django_project.settings as settings
-import logging
+# import logging
 
 # Reads file from documents and xmllints it into documents/tmp
 def pretty_print(file):

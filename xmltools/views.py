@@ -14,7 +14,7 @@ from django.template import loader
 from django import forms
 from django.urls import reverse
 import django_project.settings as settings
-import logging
+# import logging
 
 from xmltools.models import Document
 from .forms import DocumentForm, UrlForm, FormatForm
@@ -83,7 +83,7 @@ def xml_fetch(request):
 
 
 def xml_format_test(request, pk):
-    logging.warning('Inside xml_format_test func')
+    # logging.warning('Inside xml_format_test func')
     ''' Takes raw input and formats to stripped xml
         outputs to folder /final '''
     if request.POST:
