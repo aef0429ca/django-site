@@ -14,6 +14,7 @@
 <Numero
 <Complemento
 <CEP
+<Cep
 <UF
 <PrecoVenda
 <PrecoLocacao
