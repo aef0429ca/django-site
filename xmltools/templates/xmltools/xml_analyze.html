@@ -12,7 +12,7 @@
         {{ urlform.as_p }}
                  
          {% if format_valid not in 'zap,gaia,lopes' %}
-             <h2 class='warning'>{{ request.session.Format }}</h2>
+             <h2 class='warning'>Unknown!</h2>
              <i class="fas fa-question-circle fa-7x"  style="color:#ffc107;"></i>
          {% elif format_valid == "zap" %}
             <img src="{% static 'images/zap-logo.png' %}" style="height:100px;" />
