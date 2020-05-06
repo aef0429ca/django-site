@@ -19,7 +19,6 @@
                     <xsd:element name="Bairro"/>
                     <xsd:element name="Cidade"/>
                     <xsd:element name="Uf"/>
-                    <xsd:element name="Cep"/> 
                    <xsd:element name="CEP"/>
                     <xsd:element name="FotoCorretor" minOccurs="0"/>
                     <xsd:element name="PrecoRevenda" minOccurs="0"/>

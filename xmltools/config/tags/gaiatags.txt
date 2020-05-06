@@ -13,7 +13,6 @@
 <Cidade
 <Uf
 <CEP
-<Cep
 <PrecoRevenda
 <PrecoAluguel
 <AreaM2Util
