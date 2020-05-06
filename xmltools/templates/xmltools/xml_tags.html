@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-
+  <p><a href="{% url 'home' %}">Return to home</a></p>
   <div class="row">
       <div class="col-sm-4">
       <!--<div><h3>ZAP critical tags</h3></div>-->
@@ -26,6 +26,6 @@
         xml<br>Carga<br>Imoveis<br>Imovel<br>CodigoImovel<br>TipoImovel<br>SubTipoImovel<br>CategoriaImovel<br>EmDestaque<br>Estado<br>Cidade<br>Bairro<br>Endereco<br>Numero<br>Complemento<br>CEP<br>Uf<br>PrecoVenda<br>PrecoLocacao<br>AreaUtil<br>AreaTotal<br>QtdDormitorios<br>QtdSuites<br>QtdVagas<br>QtdSalas<br>QtdBanheiros<br>AnoConstrucao<br>QtdAndar<br>QtdUnidadesAndar<br>Descricao<br>Fotos<br>Foto<br>NomeArquivo<br>URLArquivo<br>Principal<br>/Foto<br>/Fotos<br>/Imovel<br>/Imoveis<br>/Carga
     </div>
     <div class="row pt-5"></div>
-    <p><a href="{% url 'home' %}">Return to home</a></p>
 </div>
+<div class="col-sm-12"><a href="{% url 'home' %}">Return to home</a></p></div>
 {% endblock %}
