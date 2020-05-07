@@ -3,12 +3,18 @@
 
 {% block content %}
   <p><a href="{% url 'home' %}">Return to home</a></p>
+  <div class="row pt-3 pb-3">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8 text-left">NB1: The parser as of May 2020 only supports formats ZAP and inGaia!<p>
+      NB2: XML tags are case sensitive. A UF tag in an xml will not be accepted as formats are using Uf!</div>
+      <div class="col-sm-2"></div>
+  </div>    
   <div class="row">
       <div class="col-sm-4">
       <!--<div><h3>ZAP critical tags</h3></div>-->
       <img src="{% static 'images/zap-logo.png' %}" style="height:60px;" />
       <div class="d-flex justify-content-center text-left">
-        xml<br>Carga<br>Imoveis<br>Imovel<br>CodigoImovel<br>TipoImovel<br>SubTipoImovel<br>CategoriaImovel<br>EmDestaque<br>Estado<br>Cidade<br>Bairro<br>Endereco<br>Numero<br>Complemento<br>CEP<br>Uf<br>PrecoVenda<br>PrecoLocacao<br>AreaUtil<br>AreaTotal<br>QtdDormitorios<br>QtdSuites<br>QtdVagas<br>QtdSalas<br>QtdBanheiros<br>AnoConstrucao<br>QtdAndar<br>QtdUnidadesAndar<br>Descricao<br>Fotos<br>Foto<br>NomeArquivo<br>URLArquivo<br>Principal<br>/Foto<br>/Fotos<br>/Imovel<br>/Imoveis<br>/Carga
+        xml<br>Carga<br>Imoveis<br>Imovel<br>CodigoImovel<br>TipoImovel<br>SubTipoImovel<br>CategoriaImovel<br>EmDestaque<br>Estado<br>Cidade<br>Bairro<br>Endereco<br>Numero<br>Complemento<br>CEP<br>UF<br>PrecoVenda<br>PrecoLocacao<br>AreaUtil<br>AreaTotal<br>QtdDormitorios<br>QtdSuites<br>QtdVagas<br>QtdSalas<br>QtdBanheiros<br>AnoConstrucao<br>QtdAndar<br>QtdUnidadesAndar<br>Descricao<br>Fotos<br>Foto<br>NomeArquivo<br>URLArquivo<br>Principal<br>/Foto<br>/Fotos<br>/Imovel<br>/Imoveis<br>/Carga
       </div>
     </div>
     
