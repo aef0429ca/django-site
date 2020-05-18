@@ -39,7 +39,10 @@ def xml_upload(request):
             os.rename(doc.document.path, os.path.join(settings.DOC_ROOT, tmp_file))
             # updates the document record with the temporary file name
             doc.file_name = tmp_file
-            doc.save(update_fields=['file_name'])
+            # save user id to created document
+            doc.user = request.user.id
+            print('Current user_id ', request.user.id)
+            doc.save(update_fields=['file_name', 'user'])
             messages.success(request, 'File uploaded and saved successfully!')
 
             return redirect('xml_format_test', form.id)
