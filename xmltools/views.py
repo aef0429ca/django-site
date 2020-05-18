@@ -41,7 +41,6 @@ def xml_upload(request):
             doc.file_name = tmp_file
             # save user id to created document
             doc.user = request.user.id
-            print('Current user_id ', request.user.id)
             doc.save(update_fields=['file_name', 'user'])
             messages.success(request, 'File uploaded and saved successfully!')
 
@@ -67,7 +66,8 @@ def xml_fetch(request):
 
             # updates the document record with the temporary file name
             doc.file_name = tmp_file
-            doc.save(update_fields=['file_name'])
+            doc.user = request.user.id
+            doc.save(update_fields=['file_name', 'user'])
                         
             if os.path.getsize(os.path.join(settings.DOC_ROOT, tmp_file)) == 0:
                 messages.error(request, 'File is of size 0! Verify that file exists at origin.')
