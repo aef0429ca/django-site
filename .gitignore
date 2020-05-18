@@ -70,6 +70,7 @@ db.sqlite3-journal
 django_project/settings/dev.py
 media/
 django_project/settings/dev.py
+*/migrations/*
 
 # Flask stuff:
 instance/
