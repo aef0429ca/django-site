@@ -39,7 +39,6 @@ def xml_upload(request):
             os.rename(doc.document.path, os.path.join(settings.DOC_ROOT, tmp_file))
             # updates the document record with the temporary file name
             doc.file_name = tmp_file
-            logging.error(' ############################ User_id ', doc.file_name)
             # save user id to created document
             current_user = request.user
             doc.user_id = current_user.id
@@ -65,12 +64,12 @@ def xml_fetch(request):
             response = requests.get(doc.url)
             with open(os.path.join(settings.DOC_ROOT, tmp_file), 'wb') as file:
                file.write(response.content)
-
-            # updates the document record with the temporary file name
-            doc.file_name = tmp_file
+            
             # save user id to created document
             current_user = request.user
             doc.user_id = current_user.id
+            # updates the document record with the temporary file name
+            doc.file_name = tmp_file
             doc.save(update_fields=['file_name', 'user'])
                         
             if os.path.getsize(os.path.join(settings.DOC_ROOT, tmp_file)) == 0:
