@@ -17,7 +17,6 @@ class Document(models.Model):
     format_guess = models.CharField(max_length = 10, choices=FORMAT_CHOICES, default="0", blank=False)
     format_valid = models.CharField(max_length = 10, default="INVALID", blank=False)
     url = models.CharField(max_length=300, default='')
-    # user = models.IntegerField(default=2)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     
