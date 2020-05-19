@@ -40,6 +40,9 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ROOT_URLCONF = 'django_project.urls'
 
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_COOKIE_AGE = 3600 # 60 minutes
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
