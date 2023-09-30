@@ -1,6 +1,6 @@
 asgiref==3.2.3
 astroid==2.3.3
-certifi==2019.11.28
+certifi==2023.7.22
 colorama==0.4.3
 Django==3.0.3
 django-crispy-forms==1.9.0
